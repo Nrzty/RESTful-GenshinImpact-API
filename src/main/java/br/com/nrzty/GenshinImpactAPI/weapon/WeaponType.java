@@ -4,6 +4,6 @@ public enum WeaponType {
     SWORD,
     BOW,
     POLEARM,
-    GREATSWORD,
+    CLAYMORE,
     CATALYST
 }
