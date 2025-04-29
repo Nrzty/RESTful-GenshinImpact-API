@@ -1,10 +1,10 @@
 package br.com.nrzty.GenshinImpactAPI.Character.model;
 
 public enum CharacterVision {
-    PYRO,
-    HYDRO,
-    ELECTRO,
-    DENDRO,
-    GEO,
-    ANEMO
+    pyro,
+    hydro,
+    electro,
+    dendro,
+    geo,
+    anemo
 }
