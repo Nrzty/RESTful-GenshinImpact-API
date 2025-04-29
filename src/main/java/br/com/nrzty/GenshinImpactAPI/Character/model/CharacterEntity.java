@@ -2,14 +2,19 @@ package br.com.nrzty.GenshinImpactAPI.Character.model;
 
 import br.com.nrzty.GenshinImpactAPI.weapon.WeaponType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "Characters")
 public class CharacterEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotNull
     private String name;
 
     @Enumerated(EnumType.STRING)
@@ -18,6 +23,8 @@ public class CharacterEntity {
     @Enumerated(EnumType.STRING)
     private CharacterVision vision;
 
+    @Min(value = 4)
+    @Max(value = 5)
     private int rarity;
 
     @Enumerated(EnumType.STRING)
