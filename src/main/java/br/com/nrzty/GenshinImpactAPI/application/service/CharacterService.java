@@ -1,7 +1,7 @@
-package br.com.nrzty.GenshinImpactAPI.Character.service;
+package br.com.nrzty.GenshinImpactAPI.application.service;
 
-import br.com.nrzty.GenshinImpactAPI.Character.model.CharacterEntity;
-import br.com.nrzty.GenshinImpactAPI.Character.repository.CharacterRepository;
+import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterEntity;
+import br.com.nrzty.GenshinImpactAPI.adapters.outbound.repository.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

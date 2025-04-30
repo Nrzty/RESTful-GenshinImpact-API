@@ -1,7 +1,7 @@
-package br.com.nrzty.GenshinImpactAPI.Character.controller;
+package br.com.nrzty.GenshinImpactAPI.adapters.inbound.controller;
 
-import br.com.nrzty.GenshinImpactAPI.Character.model.CharacterEntity;
-import br.com.nrzty.GenshinImpactAPI.Character.service.CharacterService;
+import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterEntity;
+import br.com.nrzty.GenshinImpactAPI.application.service.CharacterService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

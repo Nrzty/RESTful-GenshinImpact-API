@@ -1,4 +1,4 @@
-package br.com.nrzty.GenshinImpactAPI.artifact.model;
+package br.com.nrzty.GenshinImpactAPI.domain.artifact;
 
 public enum ArtifactType {
     Flower_of_life,

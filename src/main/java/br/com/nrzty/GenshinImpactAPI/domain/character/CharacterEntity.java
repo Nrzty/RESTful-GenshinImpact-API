@@ -1,6 +1,6 @@
-package br.com.nrzty.GenshinImpactAPI.Character.model;
+package br.com.nrzty.GenshinImpactAPI.domain.character;
 
-import br.com.nrzty.GenshinImpactAPI.weapon.WeaponType;
+import br.com.nrzty.GenshinImpactAPI.domain.weapon.WeaponType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

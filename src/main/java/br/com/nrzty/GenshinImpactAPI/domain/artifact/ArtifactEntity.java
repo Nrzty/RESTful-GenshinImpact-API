@@ -1,4 +1,4 @@
-package br.com.nrzty.GenshinImpactAPI.artifact.model;
+package br.com.nrzty.GenshinImpactAPI.domain.artifact;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
