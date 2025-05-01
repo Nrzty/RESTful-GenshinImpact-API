@@ -2,14 +2,13 @@ package br.com.nrzty.GenshinImpactAPI.application.service;
 
 import br.com.nrzty.GenshinImpactAPI.application.useCases.CharacterUseCases;
 import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterEntity;
-import br.com.nrzty.GenshinImpactAPI.adapters.outbound.repositories.JpaCharacterRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//TODO ADICIONAR OS MÉTODOS À CLASSE
 @Service
-public class CharacterService implements CharacterUseCases {
+public class CharacterServiceImpl implements CharacterUseCases {
 
 
     @Override
@@ -33,7 +32,7 @@ public class CharacterService implements CharacterUseCases {
     }
 
     @Override
-    public CharacterEntity updateCharacter(CharacterEntity character) {
+    public CharacterEntity updateCharacter(Long id, CharacterEntity character) {
         return null;
     }
 }

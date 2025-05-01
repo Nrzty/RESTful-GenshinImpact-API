@@ -1,33 +1,19 @@
 package br.com.nrzty.GenshinImpactAPI.domain.character;
 
 import br.com.nrzty.GenshinImpactAPI.domain.weapon.WeaponType;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "characters")
 public class CharacterEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
     private String name;
 
-    @Enumerated(EnumType.STRING)
     private CharacterRegion region;
 
-    @Enumerated(EnumType.STRING)
     private CharacterVision vision;
 
-    @Min(value = 4)
-    @Max(value = 5)
     private int rarity;
 
-    @Enumerated(EnumType.STRING)
     private WeaponType weaponType;
 
     public CharacterEntity() {

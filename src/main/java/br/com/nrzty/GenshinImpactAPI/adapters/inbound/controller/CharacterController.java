@@ -1,7 +1,7 @@
 package br.com.nrzty.GenshinImpactAPI.adapters.inbound.controller;
 
 import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterEntity;
-import br.com.nrzty.GenshinImpactAPI.application.service.CharacterService;
+import br.com.nrzty.GenshinImpactAPI.application.service.CharacterServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,9 +11,9 @@ import java.util.List;
 @RequestMapping("/api/character")
 public class CharacterController {
 
-    private final CharacterService characterService;
+    private final CharacterServiceImpl characterService;
 
-    public CharacterController(CharacterService characterService) {
+    public CharacterController(CharacterServiceImpl characterService) {
         this.characterService = characterService;
     }
 
