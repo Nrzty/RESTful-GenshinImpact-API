@@ -1,5 +1,6 @@
 package br.com.nrzty.GenshinImpactAPI.adapters.inbound.controller;
 
+import br.com.nrzty.GenshinImpactAPI.adapters.inbound.assembler.CharacterModelAssembler;
 import br.com.nrzty.GenshinImpactAPI.adapters.inbound.dto.CharacterDTO;
 import br.com.nrzty.GenshinImpactAPI.application.useCases.CharacterUseCases;
 import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterEntity;
@@ -10,30 +11,33 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/character")
 public class CharacterController {
 
-    private final CharacterServiceImpl characterService;
     private final CharacterUseCases characterUseCases;
+    private final CharacterModelAssembler characterAssembler;
 
-    public CharacterController(CharacterServiceImpl characterService, CharacterUseCases characterUseCases) {
-        this.characterService = characterService;
+    public CharacterController(CharacterUseCases characterUseCases, CharacterModelAssembler characterAssembler) {
         this.characterUseCases = characterUseCases;
+        this.characterAssembler = characterAssembler;
     }
 
     @GetMapping
     public ResponseEntity<List<CharacterDTO>> listAllCharacters(){
         List<CharacterEntity> characters = characterUseCases.listCharacters();
 
-        List<CharacterDTO> characterDTOS = CharacterMapper.toDTOList(characters);
+        List<CharacterDTO> characterDTOS = characters.stream().map(characterAssembler::toModel).collect(Collectors.toList());
+
         return ResponseEntity.status(HttpStatus.OK).body(characterDTOS);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<CharacterDTO> getCharacterById(@PathVariable Long id){
-        return ResponseEntity.status(HttpStatus.OK).body(CharacterMapper.toDTO(characterUseCases.getCharacterById(id)));
+        CharacterEntity character = characterUseCases.getCharacterById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(characterAssembler.toModel(character));
     }
 
     @PostMapping()

@@ -3,8 +3,9 @@ package br.com.nrzty.GenshinImpactAPI.adapters.inbound.dto;
 import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterRegion;
 import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterVision;
 import br.com.nrzty.GenshinImpactAPI.domain.weapon.WeaponType;
+import org.springframework.hateoas.RepresentationModel;
 
-public class CharacterDTO {
+public class CharacterDTO extends RepresentationModel<CharacterDTO> {
 
     private String name;
 
