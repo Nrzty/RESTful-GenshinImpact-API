@@ -1,7 +1,7 @@
 package br.com.nrzty.GenshinImpactAPI.domain.character;
 
 public enum CharacterRegion {
-    mondstadt,
+    MONDSTADT,
     liyue,
     inazuma,
     sumeru,

@@ -3,30 +3,26 @@ package br.com.nrzty.GenshinImpactAPI.adapters.outbound.repositories;
 import br.com.nrzty.GenshinImpactAPI.adapters.outbound.entities.JpaCharacterEntity;
 import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterEntity;
 import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Repository
 public class CharacterRepositoryImpl implements CharacterRepository {
 
     private final JpaCharacterRepository jpaCharacterRepository;
 
-    CharacterRepositoryImpl(JpaCharacterRepository jpaCharacterRepository) {
+    public CharacterRepositoryImpl(JpaCharacterRepository jpaCharacterRepository) {
         this.jpaCharacterRepository = jpaCharacterRepository;
     }
 
     @Override
     public CharacterEntity createCharacter(CharacterEntity characterEntity) {
         JpaCharacterEntity jpaCharacterEntity = new JpaCharacterEntity(characterEntity);
-        jpaCharacterRepository.save(jpaCharacterEntity);
-        return new CharacterEntity(
-                jpaCharacterEntity.getId(),
-                jpaCharacterEntity.getName(),
-                jpaCharacterEntity.getRegion(),
-                jpaCharacterEntity.getVision(),
-                jpaCharacterEntity.getRarity(),
-                jpaCharacterEntity.getWeaponType());
+        JpaCharacterEntity characterCreated = jpaCharacterRepository.save(jpaCharacterEntity);
+
+        return new CharacterEntity(characterCreated);
     }
 
     @Override

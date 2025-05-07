@@ -1,6 +1,8 @@
 package br.com.nrzty.GenshinImpactAPI.domain.character;
 
+import br.com.nrzty.GenshinImpactAPI.adapters.outbound.entities.JpaCharacterEntity;
 import br.com.nrzty.GenshinImpactAPI.domain.weapon.WeaponType;
+
 
 public class CharacterEntity {
 
@@ -18,6 +20,15 @@ public class CharacterEntity {
 
     public CharacterEntity() {
 
+    }
+
+    public CharacterEntity(JpaCharacterEntity entity) {
+        this.id = entity.getId();
+        this.name = entity.getName();
+        this.region = entity.getRegion();
+        this.vision = entity.getVision();
+        this.rarity = entity.getRarity();
+        this.weaponType = entity.getWeaponType();
     }
 
     public CharacterEntity(Long id, String name, CharacterRegion region, CharacterVision vision, int rarity, WeaponType weaponType) {

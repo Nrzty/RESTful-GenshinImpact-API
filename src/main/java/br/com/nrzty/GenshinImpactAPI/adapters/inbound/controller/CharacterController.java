@@ -28,10 +28,10 @@ public class CharacterController {
         return ResponseEntity.ok().body(characterService.getCharacterById(id));
     }
 
-    @PostMapping("/character")
+    @PostMapping()
     public ResponseEntity<CharacterEntity> addCharacter(@RequestBody CharacterEntity character) {
-        characterService.createCharacter(character);
-        return ResponseEntity.status(201).body(character);
+        CharacterEntity created = characterService.createCharacter(character);
+        return ResponseEntity.ok(created);
     }
 
     @PostMapping("/{id}")

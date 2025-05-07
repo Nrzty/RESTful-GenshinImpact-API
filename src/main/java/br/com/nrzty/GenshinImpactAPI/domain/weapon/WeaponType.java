@@ -2,7 +2,7 @@ package br.com.nrzty.GenshinImpactAPI.domain.weapon;
 
 public enum WeaponType {
     sword,
-    bow,
+    BOW,
     polearm,
     claymore,
     catalyst

@@ -39,6 +39,7 @@ public class JpaCharacterEntity {
         this.region = characterEntity.getRegion();
         this.vision = characterEntity.getVision();
         this.rarity = characterEntity.getRarity();
+        this.weaponType = characterEntity.getWeaponType();
     }
 
     public JpaCharacterEntity() {

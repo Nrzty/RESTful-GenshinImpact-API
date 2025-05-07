@@ -1,5 +1,6 @@
 package br.com.nrzty.GenshinImpactAPI.domain.character;
 
+
 import java.util.List;
 
 public interface CharacterRepository {
