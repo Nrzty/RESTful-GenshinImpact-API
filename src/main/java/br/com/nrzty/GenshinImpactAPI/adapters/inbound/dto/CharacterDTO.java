@@ -1,12 +1,10 @@
-package br.com.nrzty.GenshinImpactAPI.domain.character;
+package br.com.nrzty.GenshinImpactAPI.adapters.inbound.dto;
 
-import br.com.nrzty.GenshinImpactAPI.adapters.outbound.entities.JpaCharacterEntity;
+import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterRegion;
+import br.com.nrzty.GenshinImpactAPI.domain.character.CharacterVision;
 import br.com.nrzty.GenshinImpactAPI.domain.weapon.WeaponType;
 
-
-public class CharacterEntity {
-
-    private Long id;
+public class CharacterDTO {
 
     private String name;
 
@@ -18,34 +16,12 @@ public class CharacterEntity {
 
     private int rarity;
 
-    public CharacterEntity() {
-
-    }
-
-    public CharacterEntity(JpaCharacterEntity entity) {
-        this.id = entity.getId();
-        this.name = entity.getName();
-        this.region = entity.getRegion();
-        this.vision = entity.getVision();
-        this.rarity = entity.getRarity();
-        this.weaponType = entity.getWeaponType();
-    }
-
-    public CharacterEntity(Long id, String name, CharacterRegion region, CharacterVision vision, int rarity, WeaponType weaponType) {
-        this.id = id;
+    public CharacterDTO(String name, CharacterRegion region, CharacterVision vision, WeaponType weaponType, int rarity) {
         this.name = name;
         this.region = region;
         this.vision = vision;
-        this.rarity = rarity;
         this.weaponType = weaponType;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        this.rarity = rarity;
     }
 
     public String getName() {
@@ -72,19 +48,19 @@ public class CharacterEntity {
         this.vision = vision;
     }
 
-    public int getRarity() {
-        return rarity;
-    }
-
-    public void setRarity(int rarity) {
-        this.rarity = rarity;
-    }
-
     public WeaponType getWeaponType() {
         return weaponType;
     }
 
     public void setWeaponType(WeaponType weaponType) {
         this.weaponType = weaponType;
+    }
+
+    public int getRarity() {
+        return rarity;
+    }
+
+    public void setRarity(int rarity) {
+        this.rarity = rarity;
     }
 }
